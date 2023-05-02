@@ -28,20 +28,25 @@ function draw () {
   stroke(176,214,210)
   
   // draw recursive squares
-  // at relative positions  
-  recursive_square(1*    width / 8, 3.3* height / 4, 45)
-  recursive_square(1.5*  width / 8, 3.4* height / 4, 35)
-  recursive_square(2*    width / 8, 3.6* height / 4, 26)
-  recursive_square(2.5*  width / 8, 3.4* height / 4, 28)
-  recursive_square(3*    width / 8, 3.6* height / 4, 23)
-  recursive_square(3.5*  width / 8, 3.5* height / 4, 30)
-  recursive_square(4*    width / 8, 3.6* height / 4, 27)
-  recursive_square(4.5*  width / 8, 3.7* height / 4, 18)
-  recursive_square(5*    width / 8, 3.5* height / 4, 24)
-  recursive_square(5.5*  width / 8, 3.4* height / 4, 25)
-  recursive_square(6*    width / 8, 3.35* height / 4, 35)
-  recursive_square(6.5*  width / 8, 3.6* height / 4, 37)
-  recursive_square(7*    width / 8, 3.3* height / 4, 43)
+  // at relative positions
+  recursive_square(0*    width / 8, 3.35 * height / 4, 36)
+  recursive_square(0.5*  width / 8, 3.45 * height / 4, 30)
+  recursive_square(0.5*  width / 8, 3.45 * height / 4, 30)
+  recursive_square(1*    width / 8, 3.40 * height / 4, 25)
+  recursive_square(1.5*  width / 8, 3.40 * height / 4, 35)
+  recursive_square(2*    width / 8, 3.60 * height / 4, 26)
+  recursive_square(2.5*  width / 8, 3.40 * height / 4, 28)
+  recursive_square(3*    width / 8, 3.60 * height / 4, 23)
+  recursive_square(3.5*  width / 8, 3.50 * height / 4, 30)
+  recursive_square(4*    width / 8, 3.60 * height / 4, 27)
+  recursive_square(4.5*  width / 8, 3.70 * height / 4, 18)
+  recursive_square(5*    width / 8, 3.50 * height / 4, 24)
+  recursive_square(5.5*  width / 8, 3.40 * height / 4, 25)
+  recursive_square(6*    width / 8, 3.35 * height / 4, 35)
+  recursive_square(6.5*  width / 8, 3.60 * height / 4, 25)
+  recursive_square(7*    width / 8, 3.30 * height / 4, 33)
+  recursive_square(7.5*  width / 8, 3.30 * height / 4, 29)
+  recursive_square(8*    width / 8, 3.30 * height / 4, 43)
 }
 
 // define function 'spawnSugar'
@@ -86,7 +91,7 @@ function recursive_square(x, y, s) {
     recursive_square(x - s *0.5, y - s*0.5, s *0.5);
     recursive_square(x + s *0.5, y - s*0.5, s *0.5);    
   }
-} 
+}
 
 // add resizabilty
 function windowResized () {
