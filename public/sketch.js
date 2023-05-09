@@ -1,18 +1,20 @@
-document.body.style.margin   = 0
-document.body.style.overflow = `hidden`
-
 // assign empty array to `granules`
 let granules = [];
 
 // set max amount of sand
 const maxLength = 100;
 
+// load sounds
+let sparkle
+
 function setup () {
   // set canvas to window dimensions
   createCanvas(windowWidth, windowHeight);
   
   // set rectMode
-  rectMode(CENTER);
+  rectMode(CENTER);  
+
+  sparkle = loadSound('sounds/sparkle.mp3')
 }
 
 function draw () {
@@ -27,8 +29,27 @@ function draw () {
   noFill()
   stroke(176,214,210)
 
-  // draw pond squares
-  draw_RSquares()
+  // defined below
+  draw_RS()
+
+  check_collision()
+}
+
+function check_collision() {
+  for (let i = 0; i < granules.length; i++) {
+    // let d = dist(granules[i].x, granules[i].y, bubbles[i].x, bubbles[i].y) // dist between particles and center of the line
+    
+    if (granules[i].y >= 3.5 * height / 4) {
+      granules.shift()
+      playSound()
+    }
+  }
+}
+
+function playSound() {
+  let r = random(1)
+  if (r < 0.5) {sparkle.play()}
+  // console.log(r)
 }
 
 // define function 'spawnSugar'
@@ -75,7 +96,9 @@ function recursive_square(x, y, s) {
   }
 }
 
-function draw_RSquares() {
+// define draw_RS function
+function draw_RS() {
+  
   // draw recursive squares
   // at relative positions
   recursive_square(0*    width / 8, 3.35 * height / 4, 36)
